@@ -3,19 +3,19 @@ import {Link} from "react-router-dom"
 
 function SideBar() {
     return (
-        <div className="d-flex flex-column flex-shrink-0 p-3 sidebar text-bg-dark" style={{ width: '250px', height: '100vh', backgroundColor: '#4975F0' }}>
+        <div className="d-flex flex-column flex-shrink-0 p-3 sidebar text-bg-dark shadow-lg" style={{ width: '250px', height: '100vh', backgroundColor: '#4975F0' }}>
             <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <span className="fs-4">Controle de Estoque - Nansen</span>
             </a>
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
-                <li className="nav-item">
-                    <a link-to="" className="nav-link active" aria-current="page">
+                <li className="nav-item nav-link">
+                    <Link to="/" className="tab-link" aria-current="page">
                         Página Inicial
-                    </a>
+                    </Link>
                 </li>
-                <li>
-                    <Link to="/produtos" className="nav-link text-white collapse">
+                <li className="nav-item">
+                    <Link to="/produtos" className="nav-link">
                         Produtos
                     </Link>
                 </li>
