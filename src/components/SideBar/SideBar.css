@@ -1,4 +1,10 @@
 .tab-link{
     text-decoration: none;
-    
+    color: white;
+}
+
+.icons{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
 }
