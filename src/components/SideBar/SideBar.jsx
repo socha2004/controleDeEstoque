@@ -1,11 +1,18 @@
 import "./SideBar.css"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Link } from "react-router-dom"
 import BoxIcon from "../../assets/box.svg"
 import HomeIcon from "../../assets/home.svg"
+import ClipBoardIcon from "../../assets/clipboard.svg"
+
+import { CSSTransition } from "react-transition-group"
+
 
 function SideBar() {
-    const [openMenu, setOpenMenu] = useState(false);
+    const [openProdutos, setOpenProdutos] = useState(false);
+    const [openControle, setOpenControle] = useState(false);
+
+    const nodeRef = useRef(null);
 
     return (
         <div className="d-flex flex-column flex-shrink-0 p-3 sidebar text-bg-dark shadow-lg" style={{ width: '250px', height: '100vh', backgroundColor: '#4975F0' }}>
@@ -16,27 +23,46 @@ function SideBar() {
             <ul className="nav nav-pills flex-column mb-auto">
                 <li className="nav-item nav-link border-bottom">
                     <Link to="/" className="tab-link" aria-current="page">
-                        <img src={HomeIcon} className="icons"/>
+                        <img src={HomeIcon} className="icons" />
                         Página Inicial
                     </Link>
                 </li>
 
                 <li className="nav-item">
-                    <li to="/produtos" className="nav-link tab-link link-light d-flex border-bottom" onClick={() => setOpenMenu(!openMenu)} aria-expanded={openMenu}>
-                        <img src={BoxIcon} className="icons ml-2"/>
+                    <div className="nav-link tab-link link-light d-flex border-bottom" onClick={() => setOpenProdutos(!openProdutos)} aria-expanded={openProdutos}>
+                        <img src={BoxIcon} className="icons ml-2" />
                         Produtos
-                    </li>
-                    {openMenu && (
-                        <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    </div>
+                    <CSSTransition
+                        in={openProdutos}
+                        timeout={300}
+                        classNames="collapse"
+                        nodeRef={nodeRef}
+                        unmountOnExit
+                    >
+                        <ul ref={nodeRef} className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                             <li><Link to="/produtos" className="link-light d-block ps-4">Cadastrar</Link></li>
                             <li><a href="#" className="link-light d-block ps-4">Listar</a></li>
                         </ul>
-                    )}
+                    </CSSTransition>
                 </li>
-                <li>
-                    <a href="#" className="nav-link text-white">
+                <li className="nav-item">
+                    <div className="nav-link tab-link link-light d-flex border-bottom" onClick={() => setOpenControle(!openControle)} aria-expanded={openControle}>
+                        <img src={ClipBoardIcon} className="icons ml-2" />
                         Controle
-                    </a>
+                    </div>
+                    <CSSTransition
+                        in={openControle}
+                        timeout={200}
+                        classNames="collapse"
+                        nodeRef={nodeRef}
+                        unmountOnExit
+                    >
+                        <ul ref={nodeRef} className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><Link to="/produtos" className="link-light d-block ps-4">Saídas</Link></li>
+                            <li><a href="#" className="link-light d-block ps-4">Emprestimos</a></li>
+                        </ul>
+                    </CSSTransition>
                 </li>
             </ul>
             <hr />
