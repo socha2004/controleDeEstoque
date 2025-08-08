@@ -9,6 +9,9 @@ function RoutesApp() {
        <Routes>
            <Route path="/" element = { <Home/> } exact/>
            <Route path="/produtos" element = { <Produtos/> } />
+           {/* <Route path="/controle" element = { <Controle/> } />
+           <Route path="/saida" element = { <SaidaMaterial/> } />
+           <Route path="/emprestimo" element = { <EmprestimoMaterial/> } /> */}
        </Routes>
    )
 }

@@ -3,6 +3,15 @@
     color: white;
 }
 
+.temp{
+    color: white;
+    text-decoration: none;
+}
+
+.tab-link:hover{
+    background-color: chocolate;
+}
+
 .icons{
     width: 24px;
     height: 24px;

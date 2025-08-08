@@ -5,7 +5,7 @@ function App() {
   return (
     <div style={{ display: "flex" }}>
       <SideBar />
-      <div style={{ flex: 1, padding: "20px" }}>
+      <div style={{ flex: 1}}>
         <Routes/>
       </div>
     </div>

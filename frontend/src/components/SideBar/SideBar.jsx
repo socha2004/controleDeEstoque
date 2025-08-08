@@ -1,7 +1,7 @@
 import "./SideBar.css"
 import { useState, useRef } from "react"
 import { Link } from "react-router-dom"
-import BoxIcon from "../../assets/box.svg"
+import InventoryIcon from "../../assets/inventory.svg"
 import HomeIcon from "../../assets/home.svg"
 import ClipBoardIcon from "../../assets/clipboard.svg"
 
@@ -21,16 +21,15 @@ function SideBar() {
             </a>
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
-                <li className="nav-item nav-link border-bottom">
-                    <Link to="/" className="tab-link" aria-current="page">
-                        <img src={HomeIcon} className="icons" />
+                <li className="nav-item ">
+                    <Link to="/" className="temp nav-link link-light d-flex border-bottom tab-link">
+                        <img src={HomeIcon} className="icons ml-2"/>
                         Página Inicial
                     </Link>
                 </li>
-
                 <li className="nav-item">
                     <div className="nav-link tab-link link-light d-flex border-bottom" onClick={() => setOpenProdutos(!openProdutos)} aria-expanded={openProdutos}>
-                        <img src={BoxIcon} className="icons ml-2" />
+                        <img src={InventoryIcon} className="icons ml-2" />
                         Produtos
                     </div>
                     <CSSTransition
@@ -41,8 +40,8 @@ function SideBar() {
                         unmountOnExit
                     >
                         <ul ref={nodeRef} className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><Link to="/produtos" className="link-light d-block ps-4">Cadastrar</Link></li>
-                            <li><a href="#" className="link-light d-block ps-4">Listar</a></li>
+                            <li><Link to="/produtos" className="link-light d-block ps-4 tab-link">Cadastrar</Link></li>
+                            <li><a href="#" className="link-light d-block ps-4 tab-link">Listar</a></li>
                         </ul>
                     </CSSTransition>
                 </li>
@@ -66,14 +65,15 @@ function SideBar() {
                 </li>
             </ul>
             <hr />
-            <div className="dropdown">
-                <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown" aria-expanded="false" id="dropdownUser">
                     <strong>Usuário</strong>
                 </a>
-                <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
-                    <li><a className="dropdown-item" href="#">Perfil</a></li>
-                    <li><hr className="dropdown-divider" /></li>
-                    <li><a className="dropdown-item" href="#">Sair</a></li>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser">
+                    <li><a class="dropdown-item" href="#">Perfil</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#">Sair</a></li>
                 </ul>
             </div>
         </div>
