@@ -3,15 +3,21 @@ import { Route, Routes } from "react-router-dom";
 
 import Home from "./pages/home/Home";
 import Produtos from "./pages/produtos/Produtos"
+import CadastrarProdutos from "./pages/produtos/CadastrarProduto"
+import Saidas from "./pages/controle/Saidas"
+import Emprestimos from "./pages/emprestimos/Emprestimos";
 
 function RoutesApp() {
    return(
        <Routes>
            <Route path="/" element = { <Home/> } exact/>
+
            <Route path="/produtos" element = { <Produtos/> } />
-           {/* <Route path="/controle" element = { <Controle/> } />
-           <Route path="/saida" element = { <SaidaMaterial/> } />
-           <Route path="/emprestimo" element = { <EmprestimoMaterial/> } /> */}
+           <Route path="/cadastrarProdutos" element = { <CadastrarProdutos/> } />
+
+           <Route path="/saidas" element = { <Saidas/> } />
+
+           <Route path="/emprestimos" element = { <Emprestimos/> } />
        </Routes>
    )
 }

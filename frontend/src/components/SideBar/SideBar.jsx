@@ -40,8 +40,8 @@ function SideBar() {
                         unmountOnExit
                     >
                         <ul ref={nodeRef} className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><Link to="/produtos" className="link-light d-block ps-4 tab-link">Cadastrar</Link></li>
-                            <li><a href="#" className="link-light d-block ps-4 tab-link">Listar</a></li>
+                            <li><Link to="/produtos" className="link-light d-block ps-4 tab-link">Listar</Link></li>
+                            <li><Link to="/cadastrarProdutos" className="link-light d-block ps-4 tab-link">Cadastrar</Link></li>
                         </ul>
                     </CSSTransition>
                 </li>
@@ -58,8 +58,8 @@ function SideBar() {
                         unmountOnExit
                     >
                         <ul ref={nodeRef} className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><Link to="/produtos" className="link-light d-block ps-4">Saídas</Link></li>
-                            <li><a href="#" className="link-light d-block ps-4">Emprestimos</a></li>
+                            <li><Link to="/saidas" className="link-light d-block ps-4 tab-link">Saídas</Link></li>
+                            <li><Link to="/emprestimos" className="link-light d-block ps-4 tab-link">Empréstimos</Link></li>
                         </ul>
                     </CSSTransition>
                 </li>

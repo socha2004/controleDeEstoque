@@ -1,14 +1,13 @@
-import "./Home.css"
-function Home() {
+function CadastrarProdutos() {
     return (
-        <div> 
+        <div>
             <nav className="navbar bg-primary shadow">
                 <div className="container-fluid">
-                    <span className="navbar-brand mb-0 h1 text-light ">Tela Inicial</span>
+                    <span className="navbar-brand mb-0 h1 text-light">Cadastrar Produto</span>
                 </div>
             </nav>
         </div>
     )
 }
 
-export default Home
+export default CadastrarProdutos
