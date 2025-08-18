@@ -1,4 +1,5 @@
 function Emprestimos() {
+    document.title = "Registro de Emprestimos"
     return (
         <div>
             <nav className="navbar bg-primary shadow">

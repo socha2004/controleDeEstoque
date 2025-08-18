@@ -1,4 +1,5 @@
 function Saida() {
+    document.title = "Saidas de Material"
     return (
          <div>
             <nav className="navbar bg-primary shadow">

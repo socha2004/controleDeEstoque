@@ -1,5 +1,6 @@
 import "./Home.css"
 function Home() {
+    document.title = "Controle de Estoque"
     return (
         <div> 
             <nav className="navbar bg-primary shadow">

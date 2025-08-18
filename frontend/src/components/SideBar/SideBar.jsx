@@ -1,14 +1,17 @@
 import "./SideBar.css"
 import { useState, useRef } from "react"
 import { Link } from "react-router-dom"
+
 import InventoryIcon from "../../assets/inventory.svg"
 import HomeIcon from "../../assets/home.svg"
 import ClipBoardIcon from "../../assets/clipboard.svg"
+import UserIcon from "../../assets/user.svg"
+import RoleIcon from "../../assets/setting.svg"
 
 import { CSSTransition } from "react-transition-group"
 
 
-function SideBar() {
+function SideBar(props) {
     const [openProdutos, setOpenProdutos] = useState(false);
     const [openControle, setOpenControle] = useState(false);
 
@@ -23,7 +26,7 @@ function SideBar() {
             <ul className="nav nav-pills flex-column mb-auto">
                 <li className="nav-item ">
                     <Link to="/" className="temp nav-link link-light d-flex border-bottom tab-link">
-                        <img src={HomeIcon} className="icons ml-2"/>
+                        <img src={HomeIcon} className="icons ml-2" />
                         Página Inicial
                     </Link>
                 </li>
@@ -64,18 +67,22 @@ function SideBar() {
                     </CSSTransition>
                 </li>
             </ul>
-            <hr />
-            <div class="dropdown">
-                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                    data-bs-toggle="dropdown" aria-expanded="false" id="dropdownUser">
-                    <strong>Usuário</strong>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser">
-                    <li><a class="dropdown-item" href="#">Perfil</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#">Sair</a></li>
-                </ul>
+            <div className="d-flex flex-column">
+                <div className="m-1">
+                    <img src={UserIcon} className="icons ml-2 " />
+                    <span>Usuário: {props.user.name}</span>
+                </div>
+                <hr />      
+                <div className="m-1">
+                    <img src={RoleIcon} className="icons ml-2 " />
+                    <span>Função: {props.user.role}</span>
+                </div>
+                
             </div>
+            <hr />
+            <button className="btn btn-danger">
+                Sair
+            </button>
         </div>
     )
 }
