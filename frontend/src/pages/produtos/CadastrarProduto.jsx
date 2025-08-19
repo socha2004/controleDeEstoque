@@ -1,4 +1,5 @@
 function CadastrarProdutos() {
+    document.title = "Novo produto"
     return (
         <div>
             <nav className="navbar bg-primary shadow">

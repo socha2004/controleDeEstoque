@@ -1,4 +1,5 @@
 function Produtos() {
+    document.title = "Produtos"
     return (
         <div>
             <nav className="navbar bg-primary shadow">
