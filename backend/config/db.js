@@ -1,0 +1,18 @@
+import { Sequelize } from '@sequelize/core';
+import { MySqlDialect } from '@sequelize/mysql';
+
+const sequelize = new Sequelize({
+  dialect: MySqlDialect,
+  database: 'estoque_nansen',
+  user: 'root',
+  password: 'socha_dev',
+  host: 'localhost',
+  port: 3306,
+});
+
+try {
+  await sequelize.authenticate();
+  console.log('Connection has been established successfully.');
+} catch (error) {
+  console.error('Unable to connect to the database:', error);
+}
