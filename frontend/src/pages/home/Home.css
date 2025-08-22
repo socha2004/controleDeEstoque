@@ -10,3 +10,23 @@
 .home-content {
     padding: 10px;
 }
+
+.conteudo-home{
+    background-color: #fdf6e3;
+    margin: 1.5%;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.cardIcons {
+    width: 38px;
+    display: inline;
+}
+
