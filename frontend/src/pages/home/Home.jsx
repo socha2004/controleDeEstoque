@@ -1,5 +1,8 @@
 import "./Home.css"
 import MouseIcon from "../../assets/mouse.svg"
+import DesktopIcon from "../../assets/desktop.svg"
+import CartIcon from "../../assets/cart.svg"
+import SyncIcon from "../../assets/sync.svg"
 
 function Home() {
     document.title = "Controle de Estoque"
@@ -15,23 +18,25 @@ function Home() {
                 <hr/>
                 <br/>
                 <div className="cards">
-                    <div className="card p-2 bg-danger-subtle shadow">
+                    <div className="card p-3 bg-danger-subtle shadow rounded-4">
                         <img src={MouseIcon} className="cardIcons" />
                         <h5>Total de Insumos</h5>
-                        <span>58</span>
+                        <h5>58</h5>
                     </div>
-                    <div className="card p-2 bg-primary-subtle shadow">
-                        <i className=""></i>
+                    <div className="card p-3 bg-primary-subtle shadow rounded-4">
+                        <img src={DesktopIcon} className="cardIcons" />
                         <h5>Total de Ativos</h5>
-                        <span>58</span>
+                        <h5>58</h5>
                     </div>
-                    <div className="card p-2 bg-success-subtle shadow">
+                    <div className="card p-3 bg-success-subtle shadow rounded-4">
+                        <img src={CartIcon} className="cardIcons" />
                         <h5>Total de Saídas</h5>
-                        <span>58</span>
+                        <h5>58</h5>
                     </div>
-                    <div className="card p-2 bg-info-subtle shadow">
+                    <div className="card p-3 bg-info-subtle shadow rounded-4">
+                         <img src={SyncIcon} className="cardIcons" />
                         <h5>Total de Emprestimos</h5>
-                        <span>58</span>
+                        <h5>58</h5>
                     </div>
                 </div>
                 <br/>
