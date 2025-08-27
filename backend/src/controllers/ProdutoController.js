@@ -1,10 +1,17 @@
-let produtos = [
-    {id : 1, nome : "Mouse M90"}
-]
+import Consumivel from "../models/Consumivel"
 
 class ProdutoController {
     index(req, res) {
-        return res.json(produtos)
+       const produto = Consumivel.create(
+         {
+        nomeConsumivel : "Eugenio", 
+        qtdConsumivel : 20,
+        localizacaoConsumivel : "CPD",
+        codigoBarras : "232324d",
+        serialConsumivel : "3434343",
+        usuarioCadastro : "Eugenio"
+         }
+    )
     }
 }
 
