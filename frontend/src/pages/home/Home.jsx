@@ -13,7 +13,7 @@ function Home() {
                     <span className="navbar-brand mb-0 h1 text-light ">Tela Inicial</span>
                 </div>
             </nav>
-            <div className="conteudo-home shadow">
+            <div className="conteudo-tela shadow">
                 <h3>Resumo de Estoque</h3>
                 <hr/>
                 <br/>
