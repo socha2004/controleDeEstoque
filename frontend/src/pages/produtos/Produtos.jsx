@@ -1,5 +1,20 @@
+import EditIcon from "../../assets/edit.svg"
+import DeleteIcon from "../../assets/delete.svg"
+
 function Produtos() {
     document.title = "Produtos"
+
+    const mockProdutos = [
+        {
+            id : 1,
+            nome : "Mouse com fio",
+            qtd : 45,
+            marca : "Logitech",
+            modelo : "M90",
+            localizacao : "CPD"
+        }
+    ]
+
     return (
         <div>
             <nav className="navbar bg-primary shadow">
@@ -19,6 +34,7 @@ function Produtos() {
                             <th scope="col">Marca</th>
                             <th scope="col">Modelo</th>
                             <th scope="col">Localização</th>
+                            <th scope="col">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,17 +43,35 @@ function Produtos() {
                             <td>Mark</td>
                             <td>Otto</td>
                             <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>
+                                <img src={EditIcon} className="cardIcons p-1"/>
+                                <img src={DeleteIcon} className="cardIcons p-1"/>
+                            </td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
                             <td>Jacob</td>
                             <td>Thornton</td>
                             <td>@fat</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                            <td>
+                                <img src={EditIcon} className="cardIcons p-1"/>
+                                <img src={DeleteIcon} className="cardIcons p-1"/>
+                            </td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
                             <td>@twitter</td>
+                            <td>@twitter</td>
+                            <td>@twitter</td>
+                            <td>
+                                <img src={EditIcon} className="cardIcons p-1"/>
+                                <img src={DeleteIcon} className="cardIcons p-1"/>
+                            </td>
                         </tr>
                         
                     </tbody>

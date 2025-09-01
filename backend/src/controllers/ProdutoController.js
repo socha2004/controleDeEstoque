@@ -2,16 +2,11 @@ import Consumivel from "../models/Consumivel"
 
 class ProdutoController {
     index(req, res) {
-       const produto = Consumivel.create(
-         {
-        nomeConsumivel : "Eugenio", 
-        qtdConsumivel : 20,
-        localizacaoConsumivel : "CPD",
-        codigoBarras : "232324d",
-        serialConsumivel : "3434343",
-        usuarioCadastro : "Eugenio"
-         }
-    )
+       const consumivel = Consumivel.findAll();
+       console.log("Produtos em estoque: ", JSON.stringify(consumivel, null, 2));
+    }
+    novoProduto(req, res) {
+      
     }
 }
 
