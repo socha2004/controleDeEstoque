@@ -1,20 +1,19 @@
+import { useEffect, useState } from "react"
 import EditIcon from "../../assets/edit.svg"
 import DeleteIcon from "../../assets/delete.svg"
 
 function Produtos() {
     document.title = "Produtos"
 
-    const mockProdutos = [
-        {
-            id : 1,
-            nome : "Mouse com fio",
-            qtd : 45,
-            marca : "Logitech",
-            modelo : "M90",
-            localizacao : "CPD"
-        }
-    ]
+    const [dados, setDados] = useState([]);
 
+    useEffect(() => {
+        fetch("http://localhost:8080/produto")
+            // .then((res) => res.json())
+            .then((data) => setDados(data))
+            .catch((err) => console.error("Erro ao buscar dados:", err));
+    }, []);
+    console.log(dados);
     return (
         <div>
             <nav className="navbar bg-primary shadow">
@@ -38,41 +37,17 @@ function Produtos() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>
-                                <img src={EditIcon} className="cardIcons p-1"/>
-                                <img src={DeleteIcon} className="cardIcons p-1"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
-                            <td>
-                                <img src={EditIcon} className="cardIcons p-1"/>
-                                <img src={DeleteIcon} className="cardIcons p-1"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                            <td>@twitter</td>
-                            <td>@twitter</td>
-                            <td>
-                                <img src={EditIcon} className="cardIcons p-1"/>
-                                <img src={DeleteIcon} className="cardIcons p-1"/>
-                            </td>
-                        </tr>
+                        {dados.map((item) => (
+                            <tr>
+                                <td className="border px-4 py-2">{item}</td>
+                                <td className="border px-4 py-2">{item.nomeConsumivel}</td>
+                                <td className="border px-4 py-2">{item.qtdConsumivel}</td>
+                                <td className="border px-4 py-2">{item.marcaConsumivel}</td>
+                                <td className="border px-4 py-2">{item.modeloConsumivel}</td>
+                                <td className="border px-4 py-2">{item.localizacaoConsumivel}</td>
+                            </tr>
+                            
+                        ))}
                         
                     </tbody>
                 </table>

@@ -1,11 +1,12 @@
 import Consumivel from "../models/Consumivel"
 
 class ProdutoController {
-    index(req, res) {
-       const consumivel = Consumivel.findAll();
-       console.log("Produtos em estoque: ", JSON.stringify(consumivel, null, 2));
+    async index(req, res) {
+       const consumivel = await Consumivel.findAll();
+    //    console.log("Produtos em estoque: ", JSON.stringify(consumivel));
+       return res.json(consumivel);
     }
-    novoProduto(req, res) {
+    async novoProduto(req, res) {
       
     }
 }
