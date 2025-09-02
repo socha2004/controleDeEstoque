@@ -8,8 +8,8 @@ function Produtos() {
     const [dados, setDados] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8080/produto")
-            // .then((res) => res.json())
+        fetch("http://localhost:9000/produto")
+            .then((res) => res.json())
             .then((data) => setDados(data))
             .catch((err) => console.error("Erro ao buscar dados:", err));
     }, []);
@@ -24,7 +24,7 @@ function Produtos() {
             <div className="conteudo-tela shadow">
                 <h3>Itens atuais</h3>
                 <hr />
-                <table className="table table-hover shadow">
+                <table className="table table-hover table-bordered shadow">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -39,16 +39,20 @@ function Produtos() {
                     <tbody>
                         {dados.map((item) => (
                             <tr>
-                                <td className="border px-4 py-2">{item}</td>
-                                <td className="border px-4 py-2">{item.nomeConsumivel}</td>
-                                <td className="border px-4 py-2">{item.qtdConsumivel}</td>
-                                <td className="border px-4 py-2">{item.marcaConsumivel}</td>
-                                <td className="border px-4 py-2">{item.modeloConsumivel}</td>
-                                <td className="border px-4 py-2">{item.localizacaoConsumivel}</td>
+                                <td>{item.idConsumivel}</td>
+                                <td>{item.nomeConsumivel}</td>
+                                <td>{item.qtdConsumivel}</td>
+                                <td>{item.marcaConsumivel}</td>
+                                <td>{item.modeloConsumivel}</td>
+                                <td>{item.localizacaoConsumivel}</td>
+                                <td className="d-flex justify-content-around">
+                                    <img src={EditIcon} className="cardIcons p-1" /> 
+                                    <img src={DeleteIcon} className="cardIcons p-1" />
+                                </td>
                             </tr>
-                            
+
                         ))}
-                        
+
                     </tbody>
                 </table>
             </div>
