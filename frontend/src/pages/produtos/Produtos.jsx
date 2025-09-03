@@ -6,7 +6,8 @@ function Produtos() {
     document.title = "Produtos"
 
     const [dados, setDados] = useState([]);
-
+    const [loading, setLoading] = useState(true);
+    
     useEffect(() => {
         fetch("http://localhost:9000/produto")
             .then((res) => res.json())

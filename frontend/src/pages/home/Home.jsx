@@ -1,4 +1,5 @@
 import "./Home.css"
+import { useEffect, useState } from "react"
 import MouseIcon from "../../assets/mouse.svg"
 import DesktopIcon from "../../assets/desktop.svg"
 import CartIcon from "../../assets/cart.svg"
@@ -6,6 +7,14 @@ import SyncIcon from "../../assets/sync.svg"
 
 function Home() {
     document.title = "Controle de Estoque"
+
+    const [totalConsumivel, setTotalConsumivel] = useState(0);
+
+    useEffect(() => {
+        fetch("http://localhost:9000/totalConsumiveis")
+        .then(setTotalConsumivel())
+    })
+
     return (
         <div>
             <nav className="navbar bg-primary shadow">
