@@ -10,7 +10,7 @@ function App() {
   return (
     <div style={{ display: "flex" }}>
       <SideBar user={user}/>
-      <div style={{ flex: 1}}>
+      <div style={{ flex: 1, marginLeft: "250px"}}>
         <Routes/>
       </div>
     </div>
