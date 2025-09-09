@@ -47,7 +47,7 @@ const Saida = db.define("Saida",
     },                                                       
     {                                                       
         tableName: "saidas",                                                       
-        timestamps: true
+        timestamps: false
     }
 )
 

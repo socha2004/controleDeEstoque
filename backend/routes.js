@@ -1,13 +1,15 @@
 import {Router} from "express";
-import produto from "./src/controllers/ProdutoController"
+import produtoController from "./src/controllers/ProdutoController"
 import ativoController from "./src/controllers/AtivoController"
+import saidaController from "./src/controllers/SaidaController"
 
 const routes = new Router();
 
-routes.get("/produto", produto.index)
-routes.get("/totalConsumiveis", produto.totalProdutos)
-routes.post("/produto", produto.novoProduto)
+routes.get("/produto", produtoController.index)
+routes.get("/totalConsumiveis", produtoController.totalProdutos)
+routes.post("/produto", produtoController.novoProduto)
 
+routes.get("/saida", saidaController.index)
 
 routes.get("/ativo", ativoController.index)
 

@@ -1,4 +1,4 @@
-import "primereact/resources/themes/lara-light-cyan/theme.css";
+import "primereact/resources/themes/soho-light/theme.css";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { useState, useEffect } from "react";
@@ -9,7 +9,7 @@ function Saida() {
     const [dadosSaida, setDadosSaida] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:9000/produto")
+        fetch("http://localhost:9000/saida")
             .then((res) => res.json())
             .then((data) => setDadosSaida(data))
             .catch((err) => console.error("Erro ao buscar dados:", err));
@@ -28,11 +28,12 @@ function Saida() {
                 <h3>Relatório de saídas</h3>
                 <hr/>
 
-                <DataTable value={dadosSaida} showGridlines tableStyle={{ minWidth: '50rem' }}>
-                    <Column field="nomeConsumivel" header="Nome"></Column>
-                    <Column field="qtdConsumivel" header="Nome"></Column>
-                    <Column field="marcaConsumivel" header="Nome"></Column>
-                    <Column field="modeloConsumivel" header="Nome"></Column>
+                <DataTable value={dadosSaida} stripedRows tableStyle={{ minWidth: '50rem' }} size="normal" className="shadow">
+                    <Column field="idSaida" sortable header="ID"></Column>
+                    <Column field="produtoSaida" header="Produto"></Column>
+                    <Column field="usuarioDestino" header="Usuario Destino"></Column>
+                    <Column field="localDestino" header="Local"></Column>
+                    <Column field="observacaoSaida" header="Observação"></Column>
                 </DataTable>
             </div>
         </div>

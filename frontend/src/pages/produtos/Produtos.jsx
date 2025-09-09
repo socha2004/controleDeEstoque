@@ -2,10 +2,11 @@ import { useEffect, useState } from "react"
 import EditIcon from "../../assets/edit.svg"
 import DeleteIcon from "../../assets/delete.svg"
 
+
 function Produtos() {
     document.title = "Produtos"
-
     const [dados, setDados] = useState([]);
+    const [recarrega, setRecarrega] = useState(false);
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
