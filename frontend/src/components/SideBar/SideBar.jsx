@@ -51,7 +51,7 @@ function SideBar(props) {
                 <li className="nav-item">
                     <div className="nav-link tab-link link-light d-flex border-bottom" onClick={() => setOpenControle(!openControle)} aria-expanded={openControle}>
                         <img src={ClipBoardIcon} className="icons ml-2" />
-                        Controle
+                        Operações
                     </div>
                     <CSSTransition
                         in={openControle}
