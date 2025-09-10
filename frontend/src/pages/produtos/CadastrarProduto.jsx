@@ -65,7 +65,7 @@ function CadastrarProdutos() {
                 </div>
             </nav>
             <div className="conteudo-tela shadow">
-                <h2 className="text-center">Novo Produto</h2>
+                <h2 className="text-center">Entrada de material</h2>
                 <hr />
                 <form onSubmit={envioFormulario} style={{ backgroundColor: "#fff", padding: "10px", overflowY: "auto" }} className="p-2 m-2 shadow">
                     <h4>Formulário de cadastro</h4>

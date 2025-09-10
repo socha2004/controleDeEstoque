@@ -14,7 +14,7 @@ function Produtos() {
             .then((res) => res.json())
             .then((data) => setDados(data))
             .catch((err) => console.error("Erro ao buscar dados:", err));
-    }, []);
+    }, [dados]);
     console.log(dados);
     return (
         <div>
@@ -26,6 +26,14 @@ function Produtos() {
             <div className="conteudo-tela shadow">
                 <h3>Itens atuais</h3>
                 <hr />
+                <div className="d-flex justify-content-right m-1 align-items-center">
+                    <div className="card rounded-4 p-1 mr-3 bg-primary-subtle">
+                        <h6>Nova Saida</h6>
+                    </div>
+                    <div className="card rounded-4 p-1 bg-danger-subtle">
+                        <h6>Novo Empréstimo</h6>
+                    </div>
+                </div>
                 <table className="table table-hover table-bordered shadow">
                     <thead>
                         <tr>
