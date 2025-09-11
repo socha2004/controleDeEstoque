@@ -34,6 +34,10 @@ class ProdutoController {
       return totalConsumivel;
    }
 
+   async deletarProduto(req, res) {
+       
+   }
+
 }
 
 export default new ProdutoController()

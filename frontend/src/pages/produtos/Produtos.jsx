@@ -16,6 +16,11 @@ function Produtos() {
             .catch((err) => console.error("Erro ao buscar dados:", err));
     }, []);
     console.log(dados);
+
+    function redirecionaExclusao (elemento) {
+        console.log(elemento.target.parentNode)
+    }
+
     return (
         <div>
             <nav className="navbar bg-primary shadow">
@@ -48,13 +53,11 @@ function Produtos() {
                                 <td>{item.modeloConsumivel}</td>
                                 <td>{item.localizacaoConsumivel}</td>
                                 <td className="d-flex justify-content-around">
-                                    <img src={EditIcon} className="cardIcons p-1" /> 
+                                    <img src={EditIcon} onClick={redirecionaExclusao} className="cardIcons p-1" /> 
                                     <img src={DeleteIcon} className="cardIcons p-1" />
                                 </td>
                             </tr>
-
                         ))}
-
                     </tbody>
                 </table>
             </div>
