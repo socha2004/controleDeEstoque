@@ -44,7 +44,7 @@ function SideBar(props) {
                     >
                         <ul ref={nodeRef} className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                             <li><Link to="/produtos" className="link-light d-block ps-4 tab-link">Listar</Link></li>
-                            <li><Link to="/cadastrarProdutos" className="link-light d-block ps-4 tab-link">Cadastrar</Link></li>
+                            <li><Link to="/cadastrarProdutos" className="link-light d-block ps-4 tab-link">Entrada</Link></li>
                         </ul>
                     </CSSTransition>
                 </li>
