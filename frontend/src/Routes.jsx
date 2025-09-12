@@ -6,7 +6,7 @@ import Produtos from "./pages/produtos/Produtos"
 import CadastrarProdutos from "./pages/produtos/CadastrarProduto"
 import Saidas from "./pages/controle/Saidas"
 import Emprestimos from "./pages/emprestimos/Emprestimos";
-import EditarProduto from "./pages/produtos/EditarProduto";
+import EditarProduto from "./pages/produtos/VisualizarProduto";
 
 function RoutesApp() {
    return(

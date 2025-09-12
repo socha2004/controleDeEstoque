@@ -8,6 +8,7 @@ const routes = new Router();
 routes.get("/produto", produtoController.index)
 routes.get("/totalConsumiveis", produtoController.totalProdutos)
 routes.post("/produto", produtoController.novoProduto)
+routes.get("/visualizarProduto/:id", produtoController.visualizarProduto)
 
 routes.get("/saida", saidaController.index)
 

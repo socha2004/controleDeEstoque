@@ -3,7 +3,7 @@ function editarProduto () {
         <div>
             <nav className="navbar bg-primary shadow">
                 <div className="container-fluid">
-                    <span className="navbar-brand mb-0 h1 text-light">Editar Produto</span>
+                    <span className="navbar-brand mb-0 h1 text-light">Visualizar Produto</span>
                 </div>
             </nav>
         </div>

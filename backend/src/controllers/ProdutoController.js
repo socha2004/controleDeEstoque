@@ -38,6 +38,11 @@ class ProdutoController {
        
    }
 
+   async visualizarProduto(req, res) {
+       const id = req.params.id;
+       console.log(id);
+   }
+
 }
 
 export default new ProdutoController()

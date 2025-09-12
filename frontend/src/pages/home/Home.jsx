@@ -2,7 +2,7 @@ import "./Home.css"
 import { useEffect, useState } from "react"
 import MouseIcon from "../../assets/mouse.svg"
 import DesktopIcon from "../../assets/desktop.svg"
-import CartIcon from "../../assets/cart.svg"
+import CartIcon from "../../assets/cart-home.svg"
 import SyncIcon from "../../assets/sync.svg"
 
 function Home() {
