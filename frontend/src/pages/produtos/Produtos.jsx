@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react"
 import EditIcon from "../../assets/edit.svg"
 import DeleteIcon from "../../assets/delete.svg"
-
+import { Link } from "react-router-dom"
 
 function Produtos() {
     document.title = "Produtos"
     const [dados, setDados] = useState([]);
-    const [recarrega, setRecarrega] = useState(false);
-    const [loading, setLoading] = useState(true);
+    const [idProduto, setIdProduoto] = useState("");
     
     useEffect(() => {
         fetch("http://localhost:9000/produto")
@@ -15,10 +14,9 @@ function Produtos() {
             .then((data) => setDados(data))
             .catch((err) => console.error("Erro ao buscar dados:", err));
     }, [dados]);
-    console.log(dados);
-
-    function redirecionaExclusao (elemento) {
-        console.log(elemento.target.parentNode)
+    
+    const redirecionaExclusao = (elemento) => {
+        
     }
 
     return (
@@ -31,14 +29,7 @@ function Produtos() {
             <div className="conteudo-tela shadow">
                 <h3>Itens atuais</h3>
                 <hr />
-                <div className="d-flex justify-content-right m-1 align-items-center">
-                    <div className="card rounded-4 p-1 mr-3 bg-primary-subtle">
-                        <h6>Nova Saida</h6>
-                    </div>
-                    <div className="card rounded-4 p-1 bg-danger-subtle">
-                        <h6>Novo Empréstimo</h6>
-                    </div>
-                </div>
+            
                 <table className="table table-hover table-bordered shadow">
                     <thead>
                         <tr>
@@ -48,12 +39,12 @@ function Produtos() {
                             <th scope="col">Marca</th>
                             <th scope="col">Modelo</th>
                             <th scope="col">Localização</th>
-                            <th scope="col">Ação</th>
+                            <th scope="col" colSpan={2}>Ação</th>
                         </tr>
                     </thead>
                     <tbody>
                         {dados.map((item) => (
-                            <tr>
+                            <tr key={item.idConsumivel}>
                                 <td>{item.idConsumivel}</td>
                                 <td>{item.nomeConsumivel}</td>
                                 <td>{item.qtdConsumivel}</td>
@@ -61,7 +52,10 @@ function Produtos() {
                                 <td>{item.modeloConsumivel}</td>
                                 <td>{item.localizacaoConsumivel}</td>
                                 <td className="d-flex justify-content-around">
-                                    <img src={EditIcon} onClick={redirecionaExclusao} className="cardIcons p-1" /> 
+                                    <Link to={`/editarProduto/${item.idConsumivel}`}>
+                                        <img src={EditIcon} className="cardIcons p-1" /> 
+                                    </Link>
+                                    
                                     <img src={DeleteIcon} className="cardIcons p-1" />
                                 </td>
                             </tr>

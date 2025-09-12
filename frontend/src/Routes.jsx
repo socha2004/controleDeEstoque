@@ -6,6 +6,7 @@ import Produtos from "./pages/produtos/Produtos"
 import CadastrarProdutos from "./pages/produtos/CadastrarProduto"
 import Saidas from "./pages/controle/Saidas"
 import Emprestimos from "./pages/emprestimos/Emprestimos";
+import EditarProduto from "./pages/produtos/EditarProduto";
 
 function RoutesApp() {
    return(
@@ -14,6 +15,7 @@ function RoutesApp() {
 
            <Route path="/produtos" element = { <Produtos/> } />
            <Route path="/cadastrarProdutos" element = { <CadastrarProdutos/> } />
+           <Route path="/editarProduto/:id" element = { <EditarProduto/> } />
 
            <Route path="/saidas" element = { <Saidas/> } />
 

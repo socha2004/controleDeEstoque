@@ -2,6 +2,7 @@ import "primereact/resources/themes/soho-light/theme.css";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { useState, useEffect } from "react";
+import CardIcon from "../../assets/cart.svg"
 
 function Saida() {
     document.title = "Saidas de Material"
@@ -27,7 +28,7 @@ function Saida() {
             <div className="conteudo-tela shadow">
                 <h3>Relatório de saídas</h3>
                 <hr/>
-
+                    <button className="btn btn-danger shadow m-1"> <img src={CardIcon} className="cardIcons p-1" /> Emitir Saída</button>
                 <DataTable value={dadosSaida} stripedRows tableStyle={{ minWidth: '50rem' }} size="normal" className="shadow">
                     <Column field="idSaida" sortable header="ID"></Column>
                     <Column field="produtoSaida" header="Produto"></Column>
