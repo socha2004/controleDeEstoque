@@ -16,10 +16,6 @@ function Produtos() {
             .catch((err) => console.error("Erro ao buscar dados:", err));
     }, [dados]);
 
-    const redirecionaExclusao = (elemento) => {
-
-    }
-
     return (
         <div>
             <nav className="navbar bg-primary shadow">

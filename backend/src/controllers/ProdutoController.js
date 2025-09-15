@@ -40,9 +40,10 @@ class ProdutoController {
 
    async visualizarProduto(req, res) {
        const id = req.params.id;
-       console.log(id);
+       const produto = await Consumivel.findByPk(id)
+       console.log(id, produto);
+       return res.json(produto)
    }
-
 }
 
 export default new ProdutoController()
