@@ -1,7 +1,8 @@
 import SideBar from "./components/SideBar/SideBar"
 import Routes from "./Routes"
 import { PrimeReactProvider } from 'primereact/api';
-
+import 'primereact/resources/primereact.min.css';
+import 'primereact/resources/themes/lara-light-blue/theme.css'
 
 function App() {
   const user = {
