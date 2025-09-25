@@ -21,7 +21,7 @@ function CadastrarProdutos() {
             modeloConsumivel: modeloConsumivel,
             localizacaoConsumivel: localizacaoConsumivel,
             codigoBarras: codigoBarras,
-            observacao: observacao
+            observacaoConsumivel: observacao
         };
         fetch("http://localhost:9000/produto", {
             method: "POST",
@@ -97,7 +97,7 @@ function CadastrarProdutos() {
                     <label htmlFor="" className="form-label"><b>Observação</b></label>
                     <textarea className="form-control" rows="3" onChange={(event) => setObservacao(event.target.value)} />
 
-                    <button className="btn btn-primary mt-4" type="submit" onSubmit={notifica}>Cadastrar</button>
+                    <button className="btn btn-primary mt-4" type="submit" onClick={notifica}>Cadastrar</button>
                 </form>
                 <ToastContainer
                     position="bottom-right"
@@ -110,7 +110,6 @@ function CadastrarProdutos() {
                     draggable
                     pauseOnHover
                     theme="colored" 
-                   
                 />
             </div>
         </div>
