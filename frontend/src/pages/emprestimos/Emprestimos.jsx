@@ -1,4 +1,5 @@
 import ClockIcon from "../../assets/clock.svg"
+import { Link } from "react-router-dom";
 
 function Emprestimos() {
     document.title = "Registro de Emprestimos"
@@ -12,7 +13,9 @@ function Emprestimos() {
             <div className="conteudo-tela shadow">
                 <h3>Relatório de Empréstimos</h3>
                 <hr />
-                 <button className="btn btn-warning shadow m-1 text-white"> <img src={ClockIcon} className="cardIcons p-1" /> Emitir Empréstimo</button>
+                 <Link to="/emprestimoProduto">
+                    <button className="btn btn-warning shadow m-1 text-white"> <img src={ClockIcon} className="cardIcons p-1" /> Emitir Empréstimo</button>
+                 </Link>
             </div>
         </div>
     )

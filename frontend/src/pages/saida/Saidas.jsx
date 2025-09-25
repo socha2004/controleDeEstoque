@@ -1,8 +1,6 @@
-import "primereact/resources/themes/soho-light/theme.css";
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
 import { useState, useEffect } from "react";
 import CardIcon from "../../assets/cart.svg"
+import { Link } from "react-router-dom";
 
 function Saida() {
     document.title = "Saidas de Material"
@@ -28,7 +26,9 @@ function Saida() {
             <div className="conteudo-tela shadow">
                 <h3>Relatório de saídas</h3>
                 <hr/>
+                <Link to="/saidaProduto">
                     <button className="btn btn-danger shadow m-1"> <img src={CardIcon} className="cardIcons p-1" /> Emitir Saída</button>
+                </Link>
                 <table className="table table-hover table-bordered shadow mt-3">
                     <thead>
                         <tr>
