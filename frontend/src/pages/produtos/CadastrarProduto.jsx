@@ -67,38 +67,54 @@ function CadastrarProdutos() {
             <div className="conteudo-tela shadow">
                 <h2 className="text-center">Entrada de material</h2>
                 <hr />
-                <form onSubmit={envioFormulario} style={{ backgroundColor: "#fff", padding: "10px", overflowY: "auto" }} className="p-2 m-2 shadow">
-                    <h4>Formulário de cadastro</h4>
-                    <hr />
+                <div className="container">
+                    <form onSubmit={envioFormulario} style={{ backgroundColor: "#fff", padding: "20px", overflowY: "auto" }} className=" m-2 shadow">
+                        <h4>Formulário de cadastro</h4>
+                        <hr />
 
-                    <label className="form-label"><b>Nome do produto</b></label>
-                    <input type="text" name="nomeConsumivel" value={nomeConsumivel} required onChange={(event) => setNomeConsumivel(event.target.value)} className="form-control" />
+                        <label className="form-label"><b>Nome do produto</b></label>
+                        <input type="text" name="nomeConsumivel" value={nomeConsumivel} required onChange={(event) => setNomeConsumivel(event.target.value)} className="form-control" />
+                        
+                        <div className="row">
+                            <div className="col-sm">
+                                <label className="form-label"><b>Quantidade em estoque</b></label>
+                                <input type="number" className="form-control" name="qtdConsumivel" required value={qtdConsumivel} onChange={(event) => setQtdConsumivel(event.target.value)} />
+                            </div>
+                            <div className="col-sm">
+                                <label htmlFor="" className="form-label"><b>Marca</b></label>
+                                <input type="text" className="form-control" value={marcaConsumivel} required onChange={(event) => setMarcaConsumivel(event.target.value)} />
+                            </div>
+                        </div>
 
-                    <label className="form-label"><b>Quantidade em estoque</b></label>
-                    <input type="number" className="form-control" name="qtdConsumivel" required value={qtdConsumivel} onChange={(event) => setQtdConsumivel(event.target.value)} />
+                        <div className="row">
+                            <div className="col-sm">
+                                <label htmlFor="" className="form-label"><b>Modelo</b></label>
+                                <input type="text" className="form-control" value={modeloConsumivel} required onChange={(event) => setModeloConsumivel(event.target.value)} />
+                            </div>
 
-                    <label htmlFor="" className="form-label"><b>Marca</b></label>
-                    <input type="text" className="form-control" value={marcaConsumivel} required onChange={(event) => setMarcaConsumivel(event.target.value)} />
+                            <div className="col-sm">
+                                <label htmlFor="" className="form-label"><b>Localização</b></label>
+                                <select className="form-select" aria-label="Default select example" required value={localizacaoConsumivel} onChange={(event) => setLocalizacaoConsumivel(event.target.value)}>
+                                    <option selected>Escolha</option>
+                                    <option value="1">CPD</option>
+                                    <option value="2">Administração</option>
+                                    <option value="3">Armário</option>
+                                </select>
+                            </div>
+                        </div>
 
-                    <label htmlFor="" className="form-label"><b>Modelo</b></label>
-                    <input type="text" className="form-control" value={modeloConsumivel} required onChange={(event) => setModeloConsumivel(event.target.value)} />
 
-                    <label htmlFor="" className="form-label"><b>Localização</b></label>
-                    <select className="form-select" aria-label="Default select example" required value={localizacaoConsumivel} onChange={(event) => setLocalizacaoConsumivel(event.target.value)}>
-                        <option selected>Escolha</option>
-                        <option value="1">CPD</option>
-                        <option value="2">Administração</option>
-                        <option value="3">Armário</option>
-                    </select>
 
-                    <label htmlFor="" className="form-label"><b>Código de barras</b></label>
-                    <input type="text" className="form-control" value={codigoBarras} onChange={(event) => setCodigoBarras(event.target.value)} />
+                        <label htmlFor="" className="form-label"><b>Código de barras</b></label>
+                        <input type="text" className="form-control" value={codigoBarras} onChange={(event) => setCodigoBarras(event.target.value)} />
 
-                    <label htmlFor="" className="form-label"><b>Observação</b></label>
-                    <textarea className="form-control" rows="3" onChange={(event) => setObservacao(event.target.value)} />
+                        <label htmlFor="" className="form-label"><b>Observação</b></label>
+                        <textarea className="form-control" rows="3" onChange={(event) => setObservacao(event.target.value)} />
 
-                    <button className="btn btn-primary mt-4" type="submit" onClick={notifica}>Cadastrar</button>
-                </form>
+                        <button className="btn btn-primary mt-4" type="submit" onClick={notifica}>Cadastrar</button>
+                    </form>
+                </div>
+
                 <ToastContainer
                     position="bottom-right"
                     autoClose={5000}
@@ -109,7 +125,7 @@ function CadastrarProdutos() {
                     pauseOnFocusLoss
                     draggable
                     pauseOnHover
-                    theme="colored" 
+                    theme="colored"
                 />
             </div>
         </div>
