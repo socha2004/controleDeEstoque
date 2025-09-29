@@ -96,9 +96,9 @@ function CadastrarProdutos() {
                                 <label htmlFor="" className="form-label"><b>Localização</b></label>
                                 <select className="form-select" aria-label="Default select example" required value={localizacaoConsumivel} onChange={(event) => setLocalizacaoConsumivel(event.target.value)}>
                                     <option selected>Escolha</option>
-                                    <option value="1">CPD</option>
-                                    <option value="2">Administração</option>
-                                    <option value="3">Armário</option>
+                                    <option value="CPD">CPD</option>
+                                    <option value="Administração">Administração</option>
+                                    <option value="Armário">Armário</option>
                                 </select>
                             </div>
                         </div>

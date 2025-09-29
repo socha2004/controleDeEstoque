@@ -12,10 +12,10 @@
   "dependencies": {
     "bootstrap": "^5.3.7",
     "node": "^22.18.0",
-    "primereact": "^10.9.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.1",
+    "react-select": "^5.10.2",
     "react-toastify": "^11.0.5",
     "react-transition-group": "^4.4.5"
   },
