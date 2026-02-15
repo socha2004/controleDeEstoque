@@ -1,6 +1,6 @@
 import Consumivel from "../models/Consumivel"
 
-class ProdutoController {
+class ConsumivelController {
    async index(req, res) {
       const consumivel = await Consumivel.findAll();
       return res.json(consumivel);
