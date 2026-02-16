@@ -1,8 +1,8 @@
-import Consumivel from "../models/Consumivel"
+import ConsumivelService from "../services/ConsumivelService";
 
 class ConsumivelController {
    async index(req, res) {
-      const consumivel = await Consumivel.findAll();
+      const consumivel = await ConsumivelService.getConsumivel();
       return res.json(consumivel);
    }
 
@@ -46,4 +46,4 @@ class ConsumivelController {
    }
 }
 
-export default new ProdutoController()
+export default new ConsumivelController()

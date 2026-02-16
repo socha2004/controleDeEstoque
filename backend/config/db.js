@@ -3,11 +3,11 @@ import { MySqlDialect } from '@sequelize/mysql';
 
 const sequelize = new Sequelize({
   dialect: MySqlDialect,
-  database: 'estoque_nansen',
+  database: 'sistema_estoque',
   user: 'root',
-  password: 'socha_dev',
+  password: 'devsocha',
   host: 'localhost',
-  port: 3306,
+  port: 2323,
 });
 
 // try {

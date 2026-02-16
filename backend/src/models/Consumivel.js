@@ -9,45 +9,45 @@ const Consumivel = db.define("consumivel", {
         autoIncrement: true,
         allowNull: false
     },
-    nomeConsumivel: {
+    modelo: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    qtdConsumivel: {
-        type: DataTypes.INTEGER,
+    marca: {
+        type: DataTypes.STRING,
         allowNull: true
     },
-    marcaConsumivel: {
+    codBarras: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: "Genérico"
     },
-    modeloConsumivel: {
+    fornecedor: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: "Universal"
     },
-    localizacaoConsumivel: {
+    descricao: {
         type: DataTypes.STRING,
         allowNull: true
     },
-    codigoBarras: {
+    reservado: {
         type: DataTypes.STRING,
         allowNull: true
     },
-    serialConsumivel: {
+    local: {
         type: DataTypes.STRING,
         allowNull: true
     },
-    observacaoConsumivel: {
+    proprietario: {
         type: DataTypes.STRING,
         allowNull: true
     },
-    imagemConsumivel: {
-        type: DataTypes.BLOB,
+    idMovimentacao: {
+        type: DataTypes.INTEGER,
         allowNull: true
     },
-    idUsuario: {
+    movimentacao_idMovimentacao: {
         type: DataTypes.INTEGER,
         allowNull: true,
         defaultValue: 10
@@ -59,7 +59,7 @@ const Consumivel = db.define("consumivel", {
     }
 )
 
-Usuario.hasMany(Consumivel, {foreignKey : "idUsuario"})
-Consumivel.belongsTo(Usuario, {foreignKey : "idUsuario"})
+// Usuario.hasMany(Consumivel, { foreignKey: "idUsuario" })
+// Consumivel.belongsTo(Usuario, { foreignKey: "idUsuario" })
 
 export default Consumivel;
